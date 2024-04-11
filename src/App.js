@@ -1,18 +1,15 @@
 // import logo from './logo.svg';
+import React from 'react'
 import './App.css';
-import Navbar from './components/Navbar';
-import TextForm from './components/TextForm';
+import Routes from './components/AppRoutes';
+
 function App() {
   return (
     <>
-    {/* <Navbar title="TextUtils" aboutText="About"/> */}
-    {/* <Navbar/> */}
-    <Navbar title="TextUtils"/>
-    <div className="container my-3">
-      <TextForm heading="This is text box" />
-    </div>
+      <Routes/ >
     </>
   );
 }
 
 export default App;
+
