@@ -1,7 +1,9 @@
-import React, {useState, } from 'react'
+import React, {useState } from 'react'
 import {signupUser, signinUser} from '../redux/reducers/authReducer';
-import { useDispatch, useSelector } from 'react-redux'; 
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 export default function Login() {
+	const navigate = useNavigate();
 	// const HandleonChange = (event)=>{
   //     // console.log("Handel on change")
   //     setText(event.target.value)
@@ -10,24 +12,28 @@ export default function Login() {
 	const [password, setPassword] = useState('');
 	const dispatch = useDispatch();
 	const [auth, setAuth] = useState("Signin")
-	const {loading, message, user} = useSelector(state => state.user)
+	const {loading, message} = useSelector(state => state.user)
 
+	let user_data = localStorage.getItem('login_user');
+  const user1 = JSON.parse(user_data);
 	const authenticate = () =>{
 		if (auth === "Signin"){
 			dispatch(signinUser({user: { email, password }}))
 		}else{
 			dispatch(signupUser({user: { email, password }}))
 		}
+
 	}
 
 	return (
 		<>
+		{
+			user1 !== null &&
+			<h1>{navigate("/posts")}</h1>
+		}
 		
 		<div className="container my-5">
-			{
-				user !== null &&
-				user.authentication_token
-			}
+
 			{
 				loading &&
 				 <div className="progress">

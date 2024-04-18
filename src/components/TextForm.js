@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
+import { useNavigate } from "react-router-dom";
 
 export default function TextForm(props) {
+    const navigate = useNavigate();
     const handleUpClick = ()=>{
       // console.log("Uppercase was clicked" + text)
       let newText = text.toUpperCase();
@@ -43,6 +45,9 @@ export default function TextForm(props) {
         <button className="btn btn-primary mx-2 my-1" onClick={handleClear}>Clear</button>
         <button className="btn btn-primary mx-2 my-1" onClick={handleCopy}>Text Copy</button>
         <button className="btn btn-primary mx-2 my-1" onClick={handleExtraSpaces}>Remove extra spaces</button>
+        <button className="btn btn-primary mx-2 my-1" onClick={() => navigate("/posts")}>
+            Posts
+        </button>
     </div>
     <div className="container my-3">
         <h1>You text summary</h1>

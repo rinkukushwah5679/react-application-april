@@ -5,9 +5,7 @@ import About from './About';
 import Post from './Posts';
 import TextForm from './TextForm';
 import Login from './Login';
-import { useSelector } from 'react-redux'; 
 export default function AppRoutes() {
-  // const {user} = useSelector(state => state.user)
 	return (
 		<BrowserRouter>
       <Navbar title="TextUtils"/>

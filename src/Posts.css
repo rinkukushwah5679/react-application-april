@@ -10,7 +10,10 @@
   
   .card {
     background-color: #f9f9f9;
-    padding: 20px;
+    padding: 5px;
     border-radius: 8px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  }
+  .card-image{
+    max-height: 250px;
   }
