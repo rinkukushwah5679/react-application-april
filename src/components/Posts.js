@@ -51,13 +51,11 @@ export default function Posts() {
         Authorization: `Bearer ${user1.authentication_token}`,
       };
 
-      const like_type = urlType;
-
       const res = await axios.post(`${BASE_URL}/${urlType}/${postId}`, {}, { headers });
       if (res.status === 200) {
         const updatedPosts = posts.map(post => {
           if (post.id === postId) {
-            return { ...post, liked: !post.liked, likes_count: (urlType == 'unlike' ? (post.likes_count - 1) : (post.likes_count + 1)) }; // Update the post with the new like status and count
+            return { ...post, liked: !post.liked, likes_count: (urlType === 'unlike' ? (post.likes_count - 1) : (post.likes_count + 1)) }; // Update the post with the new like status and count
           }
           return post;
         });
@@ -82,13 +80,10 @@ export default function Posts() {
               <img src={post.blog_image.url} alt={post.title} className="card-image" />
             )}
             <button 
-  onClick={() => handleLike(post.id, post.liked ? 'unlike' : 'like')} 
-  style={{ backgroundColor: post.liked ? 'red' : 'inherit' }}
->
-  <FontAwesomeIcon icon={faHeart} style={{ color: post.liked ? 'white' : 'inherit' }} />
-  {' '}
-  ({post.likes.length})
-</button>
+              onClick={() => handleLike(post.id, post.liked ? 'unlike' : 'like')} 
+              style={{ backgroundColor: post.liked ? 'red' : 'inherit' }}>
+              {post.liked ? 'UnLike' : 'Like'} ({post.likes_count})
+            </button>
           </div>
         ))}
       </div>
