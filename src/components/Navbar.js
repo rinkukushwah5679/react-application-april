@@ -16,7 +16,7 @@ export default function Navbar(props) {
 
   const logOut = () =>{
     localStorage.removeItem('login_user');
-    navigate('/about');
+    navigate('/login');
   }
 
   return (
@@ -71,6 +71,7 @@ export default function Navbar(props) {
                 </Link>
               </li>
             ) : (
+              <>
               <li className="nav-item">
                 <Link 
                   className="nav-link"
@@ -78,11 +79,21 @@ export default function Navbar(props) {
                   LogOut
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link
+                  className={`nav-link ${isActive('/profile') ? 'active' : ''}`}
+                  to="/profile"
+                >
+                  Profile
+                </Link>
+              </li>
+              </>
             )}
+            
           </ul>
           <form className="d-flex" role="search">
             <input
-              className="form-control me-2"
+              className="form-control me-2 text-white"
               type="search"
               placeholder="Search"
               aria-label="Search"

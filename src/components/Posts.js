@@ -2,7 +2,8 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import "../Posts.css";
 import { BASE_URL } from '../config';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 
 export default function Posts() {
@@ -53,13 +54,14 @@ export default function Posts() {
 
       const res = await axios.post(`${BASE_URL}/${urlType}/${postId}`, {}, { headers });
       if (res.status === 200) {
-        const updatedPosts = posts.map(post => {
-          if (post.id === postId) {
-            return { ...post, liked: !post.liked, likes_count: (urlType === 'unlike' ? (post.likes_count - 1) : (post.likes_count + 1)) }; // Update the post with the new like status and count
-          }
-          return post;
-        });
-        setMyPosts(updatedPosts);
+        // const updatedPosts = posts.map(post => {
+        //   if (post.id === postId) {
+        //     return { ...post, liked: !post.liked, likes_count: (urlType === 'unlike' ? (post.likes_count - 1) : (post.likes_count + 1)) }; // Update the post with the new like status and count
+        //   }
+        //   return post;
+        // });
+        // setMyPosts(updatedPosts);
+        getApiData();
       } else {
         console.error(`Unexpected status code: ${res.status}`);
       }
@@ -71,19 +73,20 @@ export default function Posts() {
   return (
     <div className="container posts-container">
       <h5>Text with API</h5>
+      
       {isError !== "" && <h2>{isError}</h2>}
       <div className="grid">
         {posts.map((post) => (
           <div key={post.id} className="card">
-            <h6>{post.title.toUpperCase()} {post.id}</h6>
-            {post.blog_image && (
-              <img src={post.blog_image.url} alt={post.title} className="card-image" />
-            )}
-            <button 
-              onClick={() => handleLike(post.id, post.liked ? 'unlike' : 'like')} 
-              style={{ backgroundColor: post.liked ? 'red' : 'inherit' }}>
-              {post.liked ? 'UnLike' : 'Like'} ({post.likes_count})
-            </button>
+            <Link to={`/posts/${post.id}`}>
+              <h6>{post.title.toUpperCase()} {post.id}</h6>
+              {post.blog_image ? (
+                <img src={post.blog_image.url} alt={post.title} className="card-image" />
+              ) : <img src={require("../images/dog.jpg")} alt="Default Image" className="card-image" />}
+            </Link>
+            <p onClick={() => handleLike(post.id, post.liked ? 'unlike' : 'like')} 
+              style={{ backgroundColor: post.liked ? 'white' : 'inherit' }}>
+              {post.liked ? <FaHeart style={{ color: 'red', fontSize: '20px', marginRight: '5px' }} /> : <FaRegHeart style={{color: 'inherit', fontSize: '20px', marginRight: '5px'}}/>}({post.likes_count})</p>
           </div>
         ))}
       </div>
