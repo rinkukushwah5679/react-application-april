@@ -24,7 +24,6 @@ export default function Posts() {
         Authorization: `Bearer ${user1.authentication_token}`,
       };
       const res = await axios.get(`${BASE_URL}/blogs`, { headers });
-
       if (res.status === 200) {
         setMyPosts(res.data.data);
       } else {

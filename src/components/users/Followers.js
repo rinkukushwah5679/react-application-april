@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { BASE_URL } from '../../config';
-import axios from 'axios';
+import React from 'react'
+// import { BASE_URL } from '../../config';
+// import axios from 'axios';
 
 export default function Followers() {
 	// const [followers, setFollowers] = useState([]);	

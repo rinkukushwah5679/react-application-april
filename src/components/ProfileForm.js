@@ -10,6 +10,7 @@ const ProfileUpdateForm = () => {
     name: '',
     user_name: '',
     about: '',
+    date_birth: null,
     instagram_url: '',
     youtub_url: '',
     linkedin_url: '',
@@ -30,11 +31,12 @@ const ProfileUpdateForm = () => {
       };
       const response = await axios.get(`${BASE_URL}/view_profile`, { headers });
       const profileData = response.data.data;
-
+      debugger
       setFormData({
         name: profileData.name,
         user_name: profileData.user_name,
         about: profileData.about,
+        date_birth: profileData.date_birth,
         instagram_url: profileData.instagram_url,
         youtub_url: profileData.youtub_url,
         linkedin_url: profileData.linkedin_url,
@@ -85,7 +87,7 @@ const ProfileUpdateForm = () => {
       console.error('Error updating profile:', error);
     }
   };
-
+  console.log("***************", formData)
   return (
     <div className="profile-container">
       <h2>Update Profile</h2>
@@ -105,6 +107,9 @@ const ProfileUpdateForm = () => {
 
         <label>About:</label>
         <textarea name="about" value={formData.about} onChange={handleChange} />
+
+        <label>Date of Birth:</label>
+        <input type="date" id="date_birth" name="date_birth" value={formData.date_birth} onChange={handleChange} />
 
         <label>Instagram URL:</label>
         <input type="text" name="instagram_url" value={formData.instagram_url} onChange={handleChange} />
