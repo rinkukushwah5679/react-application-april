@@ -3,7 +3,7 @@ import { BASE_URL } from '../../config';
 import axios from 'axios';
 import "../../Followers.css";
 
-export default function Followers() {
+export default function Followings() {
 	const [followers, setFollowers] = useState([]);	
 	const [error, setError] = useState(null);
 
@@ -15,7 +15,7 @@ export default function Followers() {
 			const headers = {
         Authorization: `Bearer ${user.authentication_token}`,
       };
-			const res = await axios.get(`${BASE_URL}/follower_lists`, {headers})
+			const res = await axios.get(`${BASE_URL}/following_lists`, {headers})
 			setFollowers(res.data);
 		} catch (error) {
 			setError(error.message);
@@ -41,7 +41,7 @@ export default function Followers() {
 	}, []);
 	return (
 		<>
-		<h3 className="followers-screen">Followers Users</h3>
+		<h3 className="followers-screen">Followings Users</h3>
 			<div className="grid-container">
 	      {followers.map(follower => (
 	        <div key={follower.id} className="grid-item">

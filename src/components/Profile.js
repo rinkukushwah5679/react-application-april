@@ -4,6 +4,7 @@ import axios from 'axios';
 import { BASE_URL } from '../config';
 import "../Posts.css";
 import "../Profile.css";
+import UserData from "./users/ProfileData"
 
 const Profile = () => {
   const [profileData, setProfileData] = useState(null);
@@ -36,43 +37,23 @@ const Profile = () => {
     fetchData();
   }, []);
 
-  if (loading) {
-    return (
-      <div className="loading-container">
-        <div className="loading">Loading...</div>
-      </div>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <div className="loading-container">
+  //       <div className="loading">Loading...</div>
+  //     </div>
+  //   );
+  // }
 
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
+  // if (error) {
+  //   return (
+  //     <div className="loading-container">
+  //       <div className="error">Error: {error.message}</div>
+  //     </div>
+  //   );
+  // }
 
-  return (
-    <div className="profile-container">
-      <div className="profile-header">
-        <h2 className="profile_name">{profileData.name.charAt(0).toUpperCase() + profileData.name.slice(1)}'s Profile ({user.id})</h2>
-        <img src={profileData.profile_background_image.url} alt="Profile Background" />
-      </div>
-      <div className="profile-content">
-        <div className="profile-image">
-          <img src={profileData.profile_image.url} alt="Profile" />
-        </div>
-        <div className="profile-info">
-          <p>About: {profileData.about}</p>
-          <p>Instagram: <a href={profileData.instagram_url} target="_blank" rel="noopener noreferrer">{profileData.instagram_url}</a></p>
-          <p>YouTube: <a href={profileData.youtub_url} target="_blank" rel="noopener noreferrer">{profileData.youtub_url}</a></p>
-          <p>LinkedIn: <a href={profileData.linkedin_url} target="_blank" rel="noopener noreferrer">{profileData.linkedin_url}</a></p>
-          <p className="followers" onClick={() => navigate("/followers")}>Number of Followers: {profileData.number_followers}</p>
-          <p>Number of Followings: {profileData.number_followings}</p>
-          <p>Number of Posts: {profileData.number_posts}</p>
-          <Link className="btn" to="/update_profile">
-            Update Profile
-          </Link>
-        </div>
-      </div>
-    </div>
-  );
+  return <UserData profileData={profileData} loading={loading} error={error} is_current_user="true" />;
 };
 
 export default Profile;

@@ -10,7 +10,7 @@ const ProfileUpdateForm = () => {
     name: '',
     user_name: '',
     about: '',
-    date_birth: null,
+    date_birth: '',
     instagram_url: '',
     youtub_url: '',
     linkedin_url: '',
@@ -31,7 +31,7 @@ const ProfileUpdateForm = () => {
       };
       const response = await axios.get(`${BASE_URL}/view_profile`, { headers });
       const profileData = response.data.data;
-      debugger
+
       setFormData({
         name: profileData.name,
         user_name: profileData.user_name,
@@ -87,7 +87,7 @@ const ProfileUpdateForm = () => {
       console.error('Error updating profile:', error);
     }
   };
-  console.log("***************", formData)
+
   return (
     <div className="profile-container">
       <h2>Update Profile</h2>
@@ -100,25 +100,25 @@ const ProfileUpdateForm = () => {
         <input type="file" name="profile_image" onChange={handleChange} />
 
         <label>Name:</label>
-        <input type="text" name="name" value={formData.name} onChange={handleChange} />
+        <input type="text" name="name" value={formData.name} onChange={handleChange} required title="Name is required" />
 
         <label>Username:</label>
-        <input type="text" name="user_name" value={formData.user_name} onChange={handleChange} />
+        <input type="text" name="user_name" value={formData.user_name} onChange={handleChange} required />
 
         <label>About:</label>
         <textarea name="about" value={formData.about} onChange={handleChange} />
 
         <label>Date of Birth:</label>
-        <input type="date" id="date_birth" name="date_birth" value={formData.date_birth} onChange={handleChange} />
+        <input type="date" id="date_birth" name="date_birth" value={formData.date_birth} onChange={handleChange} required />
 
         <label>Instagram URL:</label>
-        <input type="text" name="instagram_url" value={formData.instagram_url} onChange={handleChange} />
+        <input type="text" name="instagram_url" value={formData.instagram_url} onChange={handleChange} required />
 
         <label>YouTube URL:</label>
-        <input type="text" name="youtub_url" value={formData.youtub_url} onChange={handleChange} />
+        <input type="text" name="youtub_url" value={formData.youtub_url} onChange={handleChange} required />
 
         <label>LinkedIn URL:</label>
-        <input type="text" name="linkedin_url" value={formData.linkedin_url} onChange={handleChange} />
+        <input type="text" name="linkedin_url" value={formData.linkedin_url} onChange={handleChange} required />
 
         <button type="submit">Update Profile</button>
       </form>

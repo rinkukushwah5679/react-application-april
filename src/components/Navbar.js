@@ -17,6 +17,7 @@ export default function Navbar(props) {
   const logOut = () =>{
     localStorage.removeItem('login_user');
     navigate('/login');
+    return;
   }
 
   return (
@@ -57,7 +58,7 @@ export default function Navbar(props) {
             <li className="nav-item">
               <Link
                 className={`nav-link ${isActive('/posts') ? 'active' : ''}`}
-                to="/posts"
+                to={user1 !== null ? user1.profile_created ? "/posts" : "/profile_create" : "/login"}
               >
                 Posts
               </Link>
@@ -82,7 +83,7 @@ export default function Navbar(props) {
               <li className="nav-item">
                 <Link
                   className={`nav-link ${isActive('/profile') ? 'active' : ''}`}
-                  to="/profile"
+                  to={user1.profile_created ? "/profile" : "/profile_create"}
                 >
                   Profile
                 </Link>
