@@ -6,6 +6,7 @@ import "../../Followers.css";
 export default function Followers() {
 	const [followers, setFollowers] = useState([]);	
 	const [error, setError] = useState(null);
+	const [message, setMessage] = useState(null);
 
 	const FollersData = async () => {
 		const user_data = localStorage.getItem('login_user');
@@ -30,11 +31,11 @@ export default function Followers() {
         Authorization: `Bearer ${user.authentication_token}`,
       };
       const response = await axios.get(`${BASE_URL}/${urlType}/${userId}`, {headers});
+      setMessage(response.data.message)
       FollersData()
   	} catch (error) {
-  		setError(error.message);
+  		setError(error);
   	}
-
   };
 	useEffect(() =>{
 		FollersData();
@@ -42,6 +43,8 @@ export default function Followers() {
 	return (
 		<>
 		<h3 className="followers-screen">Followers Users</h3>
+			{error && <div className="flash-message followers-screen">{error.message}</div>}
+			{message && <div className="flash-message followers-screen">{message}</div>}
 			<div className="grid-container">
 	      {followers.map(follower => (
 	        <div key={follower.id} className="grid-item">

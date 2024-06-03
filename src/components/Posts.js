@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import "../Posts.css";
 import { BASE_URL } from '../config';
 import { useNavigate, Link } from 'react-router-dom';
-import { FaHeart, FaRegHeart } from "react-icons/fa";
+import { FaHeart, FaRegHeart, FaRegComment } from "react-icons/fa";
 
 
 export default function Posts() {
@@ -101,10 +101,13 @@ export default function Posts() {
               {post.blog_image ? (
                 <img src={post.blog_image.url} alt={post.title} className="card-image" />
               ) : <img src={require("../images/dog.jpg")} alt="Default Image" className="card-image" />}
-              <h6>{post.title.toUpperCase()} {post.id}</h6>
+              <h6>{post.title ? post.title.toUpperCase(): ''} {post.id}</h6>
             </Link>
-            <p onClick={() => handleLike(post.id, post.liked ? 'unlike' : 'like')}>
-              {post.liked ? <FaHeart style={{ color: 'red', fontSize: '20px', marginRight: '5px' }} /> : <FaRegHeart style={{color: 'inherit', fontSize: '20px', marginRight: '5px'}}/>}({post.likes_count})</p>
+            <div className="post-actions">
+              <p onClick={() => handleLike(post.id, post.liked ? 'unlike' : 'like')}>
+                {post.liked ? <FaHeart style={{ color: 'red', fontSize: '20px', marginRight: '5px' }} /> : <FaRegHeart style={{color: 'inherit', fontSize: '20px', marginRight: '5px'}}/>}({post.likes_count})
+              </p>
+            </div>
           </div>
         ))}
       </div>

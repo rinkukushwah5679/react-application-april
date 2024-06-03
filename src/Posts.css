@@ -60,3 +60,15 @@
   font-weight: bold;
 }
 
+.post-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.post-actions p {
+  margin-right: 10px; /* Adjust spacing as needed */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}

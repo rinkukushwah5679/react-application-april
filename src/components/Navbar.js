@@ -88,21 +88,27 @@ export default function Navbar(props) {
                   Profile
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link
+                  className={`nav-link ${isActive('/posts/new') ? 'active' : ''}`}
+                  to={user1.profile_created ? "/posts/new" : "/profile_create"}
+                >
+                  New Posts
+                </Link>
+              </li>
               </>
             )}
             
           </ul>
-          <form className="d-flex" role="search">
-            <input
-              className="form-control me-2 text-white"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button className="btn btn-primary" type="submit">
-              Search
+            
+          { user1 &&
+            <button className="btn btn-primary" style={{ textTransform: 'none' }}>
+              {user1.email} ({user1.id})
             </button>
-          </form>
+
+
+          }
+          
         </div>
       </div>
     </nav>
@@ -117,3 +123,5 @@ Navbar.defaultProps = {
   title: 'Stranger',
   aboutText: 'About',
 };
+
+

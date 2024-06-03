@@ -1,0 +1,98 @@
+/* src/components/BlogPost.css */
+.blog-post {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.blog-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.blog-date {
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.blog-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.blog-body {
+  margin: 20px 0;
+  font-size: 16px;
+}
+
+.profile-section {
+  margin-top: 20px;
+}
+
+.profile-section img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+
+.social-links a {
+  display: inline-block;
+  margin-right: 10px;
+  text-decoration: none;
+  color: #007bff;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+
+.comments-section {
+  margin-top: 5px;
+}
+
+.comment {
+  padding: 5px;
+  border-top: 1px solid #ccc;
+}
+
+.likes-section {
+  margin-top: 20px;
+}
+
+.like-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.like-status {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  font-size: 16px;
+  color: #007bff;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.back-button:hover {
+  color: #0056b3;
+}
+
+.new_comments{
+  cursor: pointer;
+  color: blue;
+}

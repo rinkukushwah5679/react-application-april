@@ -4,7 +4,7 @@ import axios from 'axios';
 import { BASE_URL } from '../../config';
 import "../../Posts.css";
 import "../../Profile.css";
-import UserData from "./ProfileData"
+// import UserData from "./ProfileData"
 
 const UserProfile = () => {
 	const { profileId } = useParams();
