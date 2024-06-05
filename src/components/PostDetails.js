@@ -5,7 +5,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import "../Posts.css";
 import "../PostDetails.css";
 import PostComments from './posts/Comments';
-import { FaArrowLeft, FaRegComment } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
 import Modal from './CommentModal';
 export default function PostDetails() {
   const { postId } = useParams(); // Access the postId parameter from the URL

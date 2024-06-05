@@ -6,6 +6,7 @@ import PostComments from './posts/Comments';
 
 const Modal = ({ isOpen, onRequestClose, postId }) => {
   const appElement = document.getElementById('root');
+  console.log(onRequestClose)
   return (
     <ReactModal
       isOpen={isOpen}
@@ -15,7 +16,7 @@ const Modal = ({ isOpen, onRequestClose, postId }) => {
       appElement={appElement}
     >
       <button className="close-button" onClick={onRequestClose}>X</button>
-      <PostComments postId={postId} />
+      <PostComments postId={postId} isModal="true" />
     </ReactModal>
   );
 };

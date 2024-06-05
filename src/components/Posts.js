@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import "../Posts.css";
 import { BASE_URL } from '../config';
 import { useNavigate, Link } from 'react-router-dom';
-import { FaHeart, FaRegHeart, FaRegComment } from "react-icons/fa";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 
 export default function Posts() {
