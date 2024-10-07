@@ -71,7 +71,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 # react-application-april
 
 
-
+export NODE_OPTIONS=--openssl-legacy-provider
 
 
 
