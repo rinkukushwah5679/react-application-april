@@ -10,6 +10,7 @@ export default function Posts() {
   const navigate = useNavigate();
   const [posts, setMyPosts] = useState([]);
   const [isError, setIsError] = useState("");
+  const [current_user, SetCurrentUser] = useState(null);
 
   const getApiData = async () => {
     try {
@@ -20,11 +21,12 @@ export default function Posts() {
         return; // Exit early if user is not logged in
       }
 
+      SetCurrentUser(user1);
+
       const headers = {
         Authorization: `Bearer ${user1.authentication_token}`,
       };
       const res = await axios.get(`${BASE_URL}/blogs`, { headers });
-
       if (res.status === 200) {
         setMyPosts(res.data.data);
       } else {
@@ -78,15 +80,34 @@ export default function Posts() {
       <div className="grid">
         {posts.map((post) => (
           <div key={post.id} className="card">
+            <div className="post-header">
+              {
+                post.user_id === current_user.id ? (
+                    <Link to='/profile'>
+                      <img src={post.profile.image.url} alt={post.profile.name} className="post-profile-image" />
+                      <span className="profile-name">{post.profile.name.charAt(0).toUpperCase() + post.profile.name.slice(1)}</span>
+                    </Link>
+
+                  ) : (
+                    <Link to={`/profile/${post.profile.id}`}>
+                      <img src={post.profile.image.url} alt={post.profile.name} className="post-profile-image" />
+                      <span className="profile-name">{post.profile.name.charAt(0).toUpperCase() + post.profile.name.slice(1)}</span>
+                    </Link>
+                  )
+              }
+              
+            </div>
             <Link to={`/posts/${post.id}`}>
-              <h6>{post.title.toUpperCase()} {post.id}</h6>
               {post.blog_image ? (
                 <img src={post.blog_image.url} alt={post.title} className="card-image" />
               ) : <img src={require("../images/dog.jpg")} alt="Default Image" className="card-image" />}
+              <h6>{post.title ? post.title.toUpperCase(): ''} {post.id}</h6>
             </Link>
-            <p onClick={() => handleLike(post.id, post.liked ? 'unlike' : 'like')} 
-              style={{ backgroundColor: post.liked ? 'white' : 'inherit' }}>
-              {post.liked ? <FaHeart style={{ color: 'red', fontSize: '20px', marginRight: '5px' }} /> : <FaRegHeart style={{color: 'inherit', fontSize: '20px', marginRight: '5px'}}/>}({post.likes_count})</p>
+            <div className="post-actions">
+              <p onClick={() => handleLike(post.id, post.liked ? 'unlike' : 'like')}>
+                {post.liked ? <FaHeart style={{ color: 'red', fontSize: '20px', marginRight: '5px' }} /> : <FaRegHeart style={{color: 'inherit', fontSize: '20px', marginRight: '5px'}}/>}({post.likes_count})
+              </p>
+            </div>
           </div>
         ))}
       </div>

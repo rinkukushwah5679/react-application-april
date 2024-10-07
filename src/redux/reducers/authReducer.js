@@ -56,7 +56,6 @@ const authReducer = createSlice({
         } else {
           state.message = "successfull sign up";
           state.user = action.payload.data;
-          debugger
           localStorage.setItem('login_user', JSON.stringify(action.payload.data));
         }
       })

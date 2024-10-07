@@ -1,0 +1,40 @@
+/* Modal.css */
+.Modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  background: white;
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 80vh; /* Max height of the modal */
+  width: 80%;
+  padding: 20px;
+  border-radius: 10px;
+  outline: none;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.comments-section {
+  max-height: calc(100vh - 150px); /* Adjust based on your modal's padding and header/footer */
+  overflow-y: auto; /* Ensure comments section itself is scrollable if it overflows */
+}

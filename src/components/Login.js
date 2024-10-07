@@ -29,7 +29,11 @@ export default function Login() {
 		<>
 		{
 			user1 !== null &&
-			<h1>{navigate("/posts")}</h1>
+			(user1.profile_created ? (
+				<h1>{navigate("/posts")}</h1>
+			) : (
+				<h1>{navigate("/profile_create")}</h1>
+			))
 		}
 		
 		<div className="container my-5">
