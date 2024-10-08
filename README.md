@@ -70,9 +70,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 # react-application-april
 
+-------------------------------------------------------------------------
+Node: v18.2.0
 
 export NODE_OPTIONS=--openssl-legacy-provider
 
 
 
-Backend remote: https://github.com/sourabh8178/assignment.git
+# Backend remote: https://github.com/sourabh8178/assignment.git
+
+it's working: git remote add origin https://github.com/rinkukushwah5679/assignmant-api.git

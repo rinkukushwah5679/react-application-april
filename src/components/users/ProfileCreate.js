@@ -65,10 +65,11 @@ function ProfileCreate() {
 		      setFlashMessage(response.data.errors);
 		    } else {
 		      localStorage.setItem('login_user', JSON.stringify(response.data.data));
-		      if (user.profile_created) {
-		        navigate('/posts');
-		        return;
-		      }
+		      // if (response.data.data.profile_created) {
+		      //   navigate('/posts');
+		      //   setFlashMessage('Profile created successfully');
+		      //   return;
+		      // }
 		      setFlashMessage('Profile created successfully');
 		    }
 		    // console.log('Profile updated successfully:', response.data);
