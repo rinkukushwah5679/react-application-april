@@ -55,7 +55,7 @@ const ProfileData = ({ profileData, loading, error, is_current_user }) => {
       		<p className="followers" onClick={() => navigate("/followers")}>Number of Followers: {profileData.number_followers}</p>
           <p className="followers" onClick={() => navigate("/followings")}>Number of Followings: {profileData.number_followings}</p>
           <p>Number of Posts: {profileData.number_posts}</p>
-    			<Link className="btn" to="/update_profile">
+          <Link className="btn btn-primary update-button" to="/update_profile">
       			Update Profile
   				</Link>
         </div>
