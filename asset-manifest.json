@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/react-application-april/static/css/main.44f5a7bf.chunk.css",
+    "main.js": "/react-application-april/static/js/main.13793245.chunk.js",
+    "main.js.map": "/react-application-april/static/js/main.13793245.chunk.js.map",
+    "runtime-main.js": "/react-application-april/static/js/runtime-main.87f42e8b.js",
+    "runtime-main.js.map": "/react-application-april/static/js/runtime-main.87f42e8b.js.map",
+    "static/js/2.13ce7395.chunk.js": "/react-application-april/static/js/2.13ce7395.chunk.js",
+    "static/js/2.13ce7395.chunk.js.map": "/react-application-april/static/js/2.13ce7395.chunk.js.map",
+    "static/js/3.11f333aa.chunk.js": "/react-application-april/static/js/3.11f333aa.chunk.js",
+    "static/js/3.11f333aa.chunk.js.map": "/react-application-april/static/js/3.11f333aa.chunk.js.map",
+    "index.html": "/react-application-april/index.html",
+    "precache-manifest.72c85856c0b359b801148744cf4678f5.js": "/react-application-april/precache-manifest.72c85856c0b359b801148744cf4678f5.js",
+    "service-worker.js": "/react-application-april/service-worker.js",
+    "static/css/main.44f5a7bf.chunk.css.map": "/react-application-april/static/css/main.44f5a7bf.chunk.css.map",
+    "static/js/2.13ce7395.chunk.js.LICENSE.txt": "/react-application-april/static/js/2.13ce7395.chunk.js.LICENSE.txt",
+    "static/media/default_bg.jpeg": "/react-application-april/static/media/default_bg.12b1fefd.jpeg",
+    "static/media/dog.jpg": "/react-application-april/static/media/dog.d45dce55.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.87f42e8b.js",
+    "static/js/2.13ce7395.chunk.js",
+    "static/css/main.44f5a7bf.chunk.css",
+    "static/js/main.13793245.chunk.js"
+  ]
+}
