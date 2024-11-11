@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-application-april/static/css/main.44f5a7bf.chunk.css",
-    "main.js": "/react-application-april/static/js/main.cb2c7221.chunk.js",
-    "main.js.map": "/react-application-april/static/js/main.cb2c7221.chunk.js.map",
+    "main.js": "/react-application-april/static/js/main.3c969102.chunk.js",
+    "main.js.map": "/react-application-april/static/js/main.3c969102.chunk.js.map",
     "runtime-main.js": "/react-application-april/static/js/runtime-main.87f42e8b.js",
     "runtime-main.js.map": "/react-application-april/static/js/runtime-main.87f42e8b.js.map",
     "static/js/2.14fce186.chunk.js": "/react-application-april/static/js/2.14fce186.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.11f333aa.chunk.js": "/react-application-april/static/js/3.11f333aa.chunk.js",
     "static/js/3.11f333aa.chunk.js.map": "/react-application-april/static/js/3.11f333aa.chunk.js.map",
     "index.html": "/react-application-april/index.html",
-    "precache-manifest.edcc10d3382da5d227dc4bbdcb5092eb.js": "/react-application-april/precache-manifest.edcc10d3382da5d227dc4bbdcb5092eb.js",
+    "precache-manifest.08ae42ea5ad6b024b03741f1a61cefe0.js": "/react-application-april/precache-manifest.08ae42ea5ad6b024b03741f1a61cefe0.js",
     "service-worker.js": "/react-application-april/service-worker.js",
     "static/css/main.44f5a7bf.chunk.css.map": "/react-application-april/static/css/main.44f5a7bf.chunk.css.map",
     "static/js/2.14fce186.chunk.js.LICENSE.txt": "/react-application-april/static/js/2.14fce186.chunk.js.LICENSE.txt",
@@ -21,6 +21,6 @@
     "static/js/runtime-main.87f42e8b.js",
     "static/js/2.14fce186.chunk.js",
     "static/css/main.44f5a7bf.chunk.css",
-    "static/js/main.cb2c7221.chunk.js"
+    "static/js/main.3c969102.chunk.js"
   ]
 }

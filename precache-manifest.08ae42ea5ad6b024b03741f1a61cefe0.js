@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "31e8fa85e7d640db21b6a031588c54d0",
+    "revision": "a6908e39d53c95af9da4bfbfaee45e38",
     "url": "/react-application-april/index.html"
   },
   {
-    "revision": "737490dd76e441c31f00",
+    "revision": "e9c4e51423e3e09baaaf",
     "url": "/react-application-april/static/css/main.44f5a7bf.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-application-april/static/js/3.11f333aa.chunk.js"
   },
   {
-    "revision": "737490dd76e441c31f00",
-    "url": "/react-application-april/static/js/main.cb2c7221.chunk.js"
+    "revision": "e9c4e51423e3e09baaaf",
+    "url": "/react-application-april/static/js/main.3c969102.chunk.js"
   },
   {
     "revision": "57161cf805c8c1ab2911",
