@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Navbar from './Navbar';
 import About from './About';
 import Post from './Posts';
@@ -15,7 +15,7 @@ import ProfileCreated from './users/ProfileCreate';
 import PostCreate from './posts/PostCreate';
 export default function AppRoutes() {
 	return (
-		<BrowserRouter>
+		<HashRouter>
       <Navbar title="TextUtils"/>
       <Routes>
         <Route exact path="/about" element={<About />} />
@@ -31,6 +31,6 @@ export default function AppRoutes() {
         <Route exact path="/profile_create" element={<ProfileCreated/>} />
         <Route exact path="/" element={<TextForm heading="This is text box" />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
 	)
 }

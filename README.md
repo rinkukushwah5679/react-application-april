@@ -79,4 +79,10 @@ export NODE_OPTIONS=--openssl-legacy-provider
 
 # Backend remote: https://github.com/sourabh8178/assignment.git
 
-it's working: git remote add origin https://github.com/rinkukushwah5679/assignmant-api.git
+it's working backend application: git remote add origin https://github.com/rinkukushwah5679/assignmant-api.git
+
+
+
+### Live URL
+
+https://rinkukushwah5679.github.io/react-application-april

@@ -1,4 +1,4 @@
-export const BASE_URL = "https://7d81-103-219-229-188.ngrok-free.app/"
+export const BASE_URL = "https://099e-119-252-203-41.ngrok-free.app/"
 // const user_data = localStorage.getItem('login_user');
 // const current_user = JSON.parse(user_data);
 
